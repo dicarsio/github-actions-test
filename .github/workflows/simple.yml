@@ -12,3 +12,23 @@ jobs:
         run: |
           node -v
           php -v
+      - name: tries to run on python Shell
+        run: |
+          import platform
+          print (platform.processor())
+        shell: python
+
+  run-on-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Displays directory on powershell
+        run: Get-Location
+      - name: Displays directory on bash
+        run: pwd
+        shell: bash
+      - name: Displays OS
+        run: |
+          import platform
+          print (platform.processor())
+        shell: python
+
